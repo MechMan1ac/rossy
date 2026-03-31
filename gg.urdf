@@ -695,7 +695,7 @@
     <link name="nuts _1_" />
     <link name="pins _1_" />
     <link name="pins _2_" />
-    <link name="root">
+    <link name="base_link">
         <visual>
             <origin xyz="-0.0248063 -0.0671942 -0.0369272" rpy="1.5708 3.77836e-05 -4.90597e-15" />
             <geometry>
@@ -3452,19 +3452,19 @@
     <joint name="hanging_node_to_root_joint_0" type="fixed">
         <origin xyz="0.0796207 0.0570379 -0.0776812" rpy="2.32899e-14 3.77836e-05 2.92855e-14" />
         <axis xyz="0 0 1" />
-        <parent link="root" />
+        <parent link="base_link" />
         <child link="Tire v1" />
     </joint>
     <joint name="hanging_node_to_root_joint_1" type="fixed">
         <origin xyz="-0.0771287 0.0990379 -0.0596752" rpy="-4.5002e-15 -3.77836e-05 -3.14159" />
         <axis xyz="0 0 1" />
-        <parent link="root" />
+        <parent link="base_link" />
         <child link="nuts" />
     </joint>
     <joint name="hanging_node_to_root_joint_2" type="fixed">
         <origin xyz="-0.116379 0.0570379 -0.0776737" rpy="-1.5708 3.77836e-05 7.19137e-15" />
         <axis xyz="0 0 1" />
-        <parent link="root" />
+        <parent link="base_link" />
         <child link="Rim v1 _1_1" />
     </joint>
 </robot>
