@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "653d84768203eef17fdafd62",
+    "documentMicroversion": "2c7a93f05bd9831922ee2aa4",
+    "elementId": "d18ab7955256cfe34b4f1f6b",
+    "fullConfiguration": "default",
+    "id": "MSJL7nqnimH4LZTIh",
+    "isStandardContent": false,
+    "name": "lidar <1>",
+    "partId": "JFD",
+    "suppressed": false,
+    "type": "Part"
+}

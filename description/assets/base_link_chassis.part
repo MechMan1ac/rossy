@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "653d84768203eef17fdafd62",
+    "documentMicroversion": "2c7a93f05bd9831922ee2aa4",
+    "elementId": "c569c78da1c70730a371c2d9",
+    "fullConfiguration": "default",
+    "id": "MAL5PzTCtX+JM/8P2",
+    "isStandardContent": false,
+    "name": "base_link_chassis <1>",
+    "partId": "JFD",
+    "suppressed": false,
+    "type": "Part"
+}
