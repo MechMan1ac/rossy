@@ -1,6 +1,6 @@
 import os
 from launch import LaunchDescription
-from launch_ros.actions import Node
+from launch_ros.actions import SetParameter, Node
 from launch.actions import IncludeLaunchDescription
 from ament_index_python.packages import get_package_share_directory
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -55,11 +55,11 @@ def generate_launch_description():
         # ),
 
         #Launch joint state publisher
-        Node(
-            package='joint_state_publisher',
-            executable='joint_state_publisher',
-            parameters=[{'use_sim_time': True}]
-        ),
+        # Node(
+        #     package='joint_state_publisher',
+        #     executable='joint_state_publisher',
+        #     parameters=[{'use_sim_time': True}]
+        # ),
 
 
         # The bridge node connects Gazebo Fortress topics to ROS 2
@@ -80,11 +80,16 @@ def generate_launch_description():
                 '/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model',
 
                 # 5. Cmd_Vel: Allows you to drive the robot (Bidirectional)
-                '/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist'
+                '/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
+                
+                #6. LaserScan: Brings laser data into ROS
+                '/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan'
             ],
+            parameters=[{
+                'use_sim_time': True,
+            }],
             output='screen'
         ),
-
 
         #Launch gazebo
         gz_sim,
