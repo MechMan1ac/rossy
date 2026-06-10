@@ -5,5 +5,5 @@
     "output_format": "urdf",
 
     "add_dummy_base_link": true,
-    "package_name": "my_robot_project"
+    "package_name": "rossy"
 }
