@@ -11,7 +11,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="1.5708 -0 -3.14159"/>
             <geometry>
-                <mesh filename="file://$(find rossy)/description/assets/lidar.stl"/>
+                <mesh filename="package://rossy/description/assets/lidar.stl"/>
             </geometry>
             <material name="lidar_material">
                 <color rgba="0.109804 0.109804 0.109804 1"/>
