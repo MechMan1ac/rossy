@@ -1,7 +1,7 @@
 import os
 
 from launch import LaunchDescription
-from launch_ros.actions import SetParameter, Node
+from launch_ros.actions import Node
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
@@ -12,30 +12,22 @@ import xacro
 def generate_launch_description():
 
     pkg_dir = get_package_share_directory("rossy")
-    xacro_file = os.path.join(pkg_dir, "description", "robot.xacro")
-    robot_desc = xacro.process_file(xacro_file)
 
     #Launch robot state publisher
-    rsp = Node(
-            package="robot_state_publisher",
-            executable="robot_state_publisher",
-            parameters=[{"use_sim_time": True, "robot_description": robot_desc.toxml()}]
-        )
-    
-    #Launch rviz
-    rviz2 = Node(
-                package="rviz2",
-                executable="rviz2",
-                parameters=[{"use_sim_time": True}],
-                output="screen",
-            )
+    rsp = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    pkg_dir,'launch','rsp.launch.py'
+                )]), launch_arguments={'use_sim_time': 'true', 'use_ros2_control': 'true'}.items()
+    )
+
+    gazebo_params_file = os.path.join(pkg_dir, "config", "gazebo_params.yaml")
 
     #Launch gazebo
     gz_sim = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
                     os.path.join(get_package_share_directory("ros_gz_sim"), "launch", "gz_sim.launch.py")
                 ),
-                launch_arguments={"gz_args": "empty.sdf -r"}.items(),
+                launch_arguments={"gz_args": "empty.sdf -r", "extra_gz_args": "--ros-args --params-file " + gazebo_params_file}.items(),
             )
     
     #Spawn in robot
@@ -95,7 +87,6 @@ def generate_launch_description():
     #Launch all of them!            
     return LaunchDescription([
         rsp,
-        rviz2,
         gz_sim,
         gz_spawn_entity,
         gz_bridge,
