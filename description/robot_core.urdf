@@ -21,7 +21,7 @@
     <visual>
       <origin xyz="-0.0102058 0 0.003" rpy="3.14159 -0 1.5708"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/base_link_chassis.stl"/>
+        <mesh filename="package://rossy/description/assets/base_link_chassis.stl"/>
       </geometry>
       <material name="base_link_chassis_material">
         <color rgba="1 0.501961 0 1"/>
@@ -37,7 +37,7 @@
     <visual>
       <origin xyz="0.567337 0.115606 0.182641" rpy="1.5708 0 -1.57083"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/motor.stl"/>
+        <mesh filename="package://rossy/description/assets/motor.stl"/>
       </geometry>
       <material name="motor_material">
         <color rgba="0.8 0.8 0.8 1"/>
@@ -48,7 +48,7 @@
     <visual>
       <origin xyz="-0.037706 -0.0850001 0.041" rpy="0 0 1.5708"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/shell.stl"/>
+        <mesh filename="package://rossy/description/assets/shell.stl"/>
       </geometry>
       <material name="shell_material">
         <color rgba="0.0980392 0.0980392 0.0980392 1"/>
@@ -59,7 +59,7 @@
     <!-- <visual>
       <origin xyz="-0.0307058 -0.00250012 0.1371" rpy="1.5708 -0 -3.14159"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/lidar.stl"/>
+        <mesh filename="package://rossy/description/assets/lidar.stl"/>
       </geometry>
       <material name="lidar_material">
         <color rgba="0.109804 0.109804 0.109804 1"/>
@@ -76,7 +76,7 @@
     <visual>
       <origin xyz="-0.687748 -0.115606 0.182641" rpy="1.5708 -0 1.57076"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/motor.stl"/>
+        <mesh filename="package://rossy/description/assets/motor.stl"/>
       </geometry>
       <material name="motor_2_material">
         <color rgba="0.8 0.8 0.8 1"/>
@@ -87,7 +87,7 @@
     <visual>
       <origin xyz="0.0397942 0 -0.005" rpy="1.5708 -0 1.5708"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/caster_wheel.stl"/>
+        <mesh filename="package://rossy/description/assets/caster_wheel.stl"/>
       </geometry>
       <material name="caster_wheel_material">
         <color rgba="0.0980392 0.0980392 0.0980392 1"/>
@@ -104,7 +104,7 @@
     <visual>
       <origin xyz="-0.010206 -1.23456e-07 0.038" rpy="-0 -0 -1.5708"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/cover.stl"/>
+        <mesh filename="package://rossy/description/assets/cover.stl"/>
       </geometry>
       <material name="cover_material">
         <color rgba="0.0980392 0.0980392 0.0980392 1"/>
@@ -115,7 +115,7 @@
     <visual>
       <origin xyz="0.062794 -1.23456e-07 0.041" rpy="1.5708 0 -1.5708"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/camera_mount_base.stl"/>
+        <mesh filename="package://rossy/description/assets/camera_mount_base.stl"/>
       </geometry>
       <material name="camera_mount_base_material">
         <color rgba="0.301961 0.301961 0.301961 1"/>
@@ -126,7 +126,7 @@
     <visual>
       <origin xyz="0.100572 0.0072075 0.0814124" rpy="1.53589 0 1.5708"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/logitech_c270.stl"/>
+        <mesh filename="package://rossy/description/assets/logitech_c270.stl"/>
       </geometry>
       <material name="logitech_c270_material">
         <color rgba="0.34902 0.34902 0.34902 1"/>
@@ -135,7 +135,7 @@
     <collision>
       <origin xyz="0.100572 0.0072075 0.0814124" rpy="1.53589 0 1.5708"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/logitech_c270.stl"/>
+        <mesh filename="package://rossy/description/assets/logitech_c270.stl"/>
       </geometry>
     </collision>
 
@@ -143,7 +143,7 @@
     <visual>
       <origin xyz="0.0627324 -1.23456e-07 0.062159" rpy="2.12071 -0 -1.5708"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/attachment.stl"/>
+        <mesh filename="package://rossy/description/assets/attachment.stl"/>
       </geometry>
       <material name="attachment_material">
         <color rgba="0.301961 0.301961 0.301961 1"/>
@@ -154,7 +154,7 @@
     <visual>
       <origin xyz="0.064203 -1.23456e-07 0.04925" rpy="1.5708 -0 1.5708"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/logitech_c270c.stl"/>
+        <mesh filename="package://rossy/description/assets/logitech_c270c.stl"/>
       </geometry>
       <material name="logitech_c270c_material">
         <color rgba="0.34902 0.34902 0.34902 1"/>
@@ -165,7 +165,7 @@
     <visual>
       <origin xyz="0.0806752 -0.000750123 0.0793169" rpy="2.1293 -0 -1.5708"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/logitech_c270b.stl"/>
+        <mesh filename="package://rossy/description/assets/logitech_c270b.stl"/>
       </geometry>
       <material name="logitech_c270b_material">
         <color rgba="0.294118 0.294118 0.294118 1"/>
@@ -184,7 +184,7 @@
     <visual>
       <origin xyz="-0 -0 0.00575" rpy="0 1.5708 0"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/rim.stl"/>
+        <mesh filename="package://rossy/description/assets/rim.stl"/>
       </geometry>
       <material name="rim_material">
         <color rgba="1 1 1 1"/>
@@ -195,7 +195,7 @@
     <visual>
       <origin xyz="0 -0 0.01825" rpy="-0 1.5708 0"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/tire.stl"/>
+        <mesh filename="package://rossy/description/assets/tire.stl"/>
       </geometry>
       <material name="tire_material">
         <color rgba="0.301961 0.301961 0.301961 1"/>
@@ -211,7 +211,7 @@
     <visual>
       <origin xyz="0 -0 0.018" rpy="-1.5708 0 -0"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/hex_nut.stl"/>
+        <mesh filename="package://rossy/description/assets/hex_nut.stl"/>
       </geometry>
       <material name="hex_nut_material">
         <color rgba="1 0.870588 0.529412 1"/>
@@ -238,7 +238,7 @@
     <visual>
       <origin xyz="0 -0 -0.00575" rpy="3.14159 -1.5708 0"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/rim.stl"/>
+        <mesh filename="package://rossy/description/assets/rim.stl"/>
       </geometry>
       <material name="rim_2_material">
         <color rgba="1 1 1 1"/>
@@ -249,7 +249,7 @@
     <visual>
       <origin xyz="0 -0 -0.01825" rpy="3.14159 -1.5708 0"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/tire.stl"/>
+        <mesh filename="package://rossy/description/assets/tire.stl"/>
       </geometry>
       <material name="tire_2_material">
         <color rgba="0.301961 0.301961 0.301961 1"/>
@@ -265,7 +265,7 @@
     <visual>
       <origin xyz="0 -0 -0.018" rpy="1.5708 -0 -0"/>
       <geometry>
-        <mesh filename="file://$(find rossy)/description/assets/hex_nut.stl"/>
+        <mesh filename="package://rossy/description/assets/hex_nut.stl"/>
       </geometry>
       <material name="hex_nut_2_material">
         <color rgba="1 0.870588 0.529412 1"/>
