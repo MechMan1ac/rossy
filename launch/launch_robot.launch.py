@@ -1,10 +1,9 @@
 import os
 
 from launch import LaunchDescription
-from launch_ros.actions import SetParameter, Node
+from launch_ros.actions import Node
 from launch.actions import IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, Command
 from launch.actions import RegisterEventHandler
 from launch.event_handlers import OnProcessStart
 
@@ -19,12 +18,12 @@ def generate_launch_description():
     robot_desc = xacro.process_file(xacro_file)
     robot_desc_xml = robot_desc.toxml()
 
-    #Robot state publisher
-    rsp = Node(
-            package="robot_state_publisher",
-            executable="robot_state_publisher",
-            parameters=[{"use_sim_time": False, "robot_description": robot_desc_xml}]
-        )
+    #Launch robot state publisher
+    rsp = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    pkg_dir,'launch','rsp.launch.py'
+                )]), launch_arguments={'use_sim_time': 'false', 'use_ros2_control': 'true'}.items()
+    )
 
     controller_params_file = os.path.join(pkg_dir,'config','my_controllers.yaml')
     
