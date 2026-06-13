@@ -20,14 +20,14 @@ def generate_launch_description():
                 )]), launch_arguments={'use_sim_time': 'true', 'use_ros2_control': 'true'}.items()
     )
 
-    gazebo_params_file = os.path.join(pkg_dir, "config", "gazebo_params.yaml")
+    gazebo_world = os.path.join(pkg_dir, "worlds", "obstacles_world.sdf")
 
     #Launch gazebo
     gz_sim = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
                     os.path.join(get_package_share_directory("ros_gz_sim"), "launch", "gz_sim.launch.py")
                 ),
-                launch_arguments={"gz_args": "empty.sdf -r", "extra_gz_args": "--ros-args --params-file " + gazebo_params_file}.items(),
+                launch_arguments={'gz_args': f'{gazebo_world} -r'}.items(),
             )
     
     #Spawn in robot
