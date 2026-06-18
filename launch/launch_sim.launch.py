@@ -20,14 +20,14 @@ def generate_launch_description():
                 )]), launch_arguments={'use_sim_time': 'true', 'use_ros2_control': 'true'}.items()
     )
 
-    gazebo_world = os.path.join(pkg_dir, "worlds", "obstacles_world.sdf")
+    gazebo_world = os.path.join(pkg_dir, "worlds", "obstacles_world.sdf.xml")
 
     #Launch gazebo
     gz_sim = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
                     os.path.join(get_package_share_directory("ros_gz_sim"), "launch", "gz_sim.launch.py")
                 ),
-                launch_arguments={'gz_args': f'{gazebo_world} -r'}.items(),
+                launch_arguments={'gz_args': f'{gazebo_world} -r', 'use_sim_time': 'true'}.items(),
             )
     
     #Spawn in robot
@@ -75,6 +75,7 @@ def generate_launch_description():
         package="controller_manager",
         executable="spawner",
         arguments=["diff_cont"],
+        parameters=[{"use_sim_time": True}]
     )
 
     #Joint state broadcaster
@@ -82,11 +83,21 @@ def generate_launch_description():
         package="controller_manager",
         executable="spawner",
         arguments=["joint_broad"],
+        parameters=[{"use_sim_time": True}]
     )
+
+    #Rviz2
+    rviz2 = Node(
+    package='rviz2',
+    executable='rviz2',
+    name='rviz2',
+    parameters=[{'use_sim_time': True}]
+)
     
     #Launch all of them!            
     return LaunchDescription([
         rsp,
+        rviz2,
         gz_sim,
         gz_spawn_entity,
         gz_bridge,
