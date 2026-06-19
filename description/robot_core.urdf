@@ -56,7 +56,7 @@
     </visual>
     
     <!-- Part lidar -->
-    <!-- <visual>
+    <visual>
       <origin xyz="-0.0307058 -0.00250012 0.1371" rpy="1.5708 -0 -3.14159"/>
       <geometry>
         <mesh filename="file://$(find rossy)/description/assets/lidar.stl"/>
@@ -64,7 +64,7 @@
       <material name="lidar_material">
         <color rgba="0.109804 0.109804 0.109804 1"/>
       </material>
-    </visual> -->
+    </visual>
     <collision>
       <origin xyz="-0.0307058 -0.00250012 0.1371" rpy="0 0 0"/>
       <geometry>
